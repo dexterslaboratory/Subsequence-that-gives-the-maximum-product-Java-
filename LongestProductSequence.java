@@ -11,11 +11,11 @@ public class LongestProductSequence {
 			num[i]=Integer.parseInt(inp[i]);
 		}
 		//--now to deal with situations like 0 -2 0 -1 0
-		boolean isolatedNegative=true;;
+		boolean isolated=true;;
 		for(int i=1;i<num.length-1;i++){
-			if( num[i]<0 && !(num[i-1]==0 && num[i+1]==0) ){isolatedNegative = false;break;}
+			if(!(num[i-1]==0 && num[i+1]==0) ){isolated = false;break;}
 		}
-		if(isolatedNegative){
+		if(isolated){
 			int num1[] = new int[num.length]; 
 			System.arraycopy(num,0,num1,0,num.length);
 			Arrays.sort(num1);
